@@ -1,11 +1,14 @@
 import React, { useState } from 'react'
 import { AgregarCat } from './componentes/AgregarCat';
+import { GifGrid } from './componentes/GifGrid';
 
-export const Gifexpertapp = ({valor}) => {
+
+export const Gifexpertapp = () => {
   
   const [Categories, setCategories] = useState(['dragon ball']);
   
   const insertarCategoria = (valor1) => {
+    if (Categories.includes(valor1)) return;
     setCategories([...Categories, valor1]);
     console.log(Categories);
   }
@@ -16,7 +19,7 @@ export const Gifexpertapp = ({valor}) => {
       <AgregarCat onNewCategory={ valorR => insertarCategoria(valorR)}/>
         <ol>
           {
-            Categories.map(categoria => <li key={categoria}>{categoria}</li>)
+            Categories.map(categoria => <GifGrid key={categoria} value={categoria} />)
           }
         </ol>
     </>

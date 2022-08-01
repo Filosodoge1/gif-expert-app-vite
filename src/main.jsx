@@ -5,6 +5,6 @@ import './styles.css';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <Gifexpertapp valor={"hola2"}/>
+    <Gifexpertapp />
   </React.StrictMode>
 )
